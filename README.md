@@ -2,6 +2,23 @@
 
 A showcase app for the **FabricUI** design system library.
 
+## Screenshots
+
+<div align="center">
+  <img src="Screenshots/themes-tab.png" width="250" alt="Themes Tab"/>
+  <img src="Screenshots/components-tab.png" width="250" alt="Components Tab"/>
+  <img src="Screenshots/about-tab.png" width="250" alt="About Tab"/>
+</div>
+
+### Themes Tab
+Live theme switching between Material, Apple, and Flat design systems, plus custom theme builder.
+
+### Components Tab
+Full gallery showcasing all FabricUI components with different styles and sizes.
+
+### About Tab
+Documentation, installation guide, and quick start examples.
+
 ## Project Structure
 
 - `DesignLab/` - iOS app that demonstrates FabricUI components
@@ -30,10 +47,19 @@ Once the package is linked, import FabricUI in your SwiftUI views:
 ```swift
 import FabricUI
 
-// Use components
-FabricButton.filled("Click Me") { }
-FabricText.headline("Hello World")
-FabricTextField.outlined("Email", text: $email)
+// Apply a theme to your app
+ContentView()
+    .fabricTheme(.material)  // or .apple, .flat, or .custom(...)
+
+// Use native SwiftUI components with FabricUI modifiers
+Text("Hello World")
+    .fabricTextStyle(.h1)
+
+Button("Click Me") { }
+    .buttonStyle(.fabricFilled())
+
+TextField("", text: $email)
+    .fabricTextFieldStyle("Email")
 ```
 
 For detailed documentation, see `FabricUI/README.md`

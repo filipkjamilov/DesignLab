@@ -279,6 +279,34 @@ TabView {
 4. Update `customTheme` computed property
 5. Update `generatedCode` string
 
+### Updating Screenshots for README
+
+**IMPORTANT**: When making visual changes to any views, update the screenshots in README.md
+
+1. Use Xcode's RenderPreview MCP tool to generate screenshots:
+   ```swift
+   // For each view with a #Preview:
+   RenderPreview(sourceFilePath: "DesignLab/DesignLab/ThemeComparisonView.swift")
+   RenderPreview(sourceFilePath: "DesignLab/DesignLab/ContentView.swift")
+   RenderPreview(sourceFilePath: "DesignLab/DesignLab/AboutView.swift")
+   ```
+
+2. Copy generated screenshots to `Screenshots/` directory:
+   ```bash
+   cp [temp_path] Screenshots/themes-tab.png
+   cp [temp_path] Screenshots/components-tab.png
+   cp [temp_path] Screenshots/about-tab.png
+   ```
+
+3. Screenshots are automatically displayed in README.md
+
+**When to Update Screenshots**:
+- After adding new components
+- After changing theme presets
+- After UI layout changes
+- After adding new features to any tab
+- Before creating GitHub releases
+
 ### Adding Persistence
 
 To save themes between app launches:
